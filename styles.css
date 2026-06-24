@@ -1,0 +1,177 @@
+/* Hide default cursor to show custom cursor */
+@media (min-width: 768px) {
+    body, a, button, input, textarea {
+        cursor: none !important;
+    }
+}
+
+/* Custom Cursor */
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #00e5ff;
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    pointer-events: none;
+    box-shadow: 0 0 10px #00e5ff;
+}
+
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(0, 229, 255, 0.5);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    z-index: 9998;
+    pointer-events: none;
+    transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s;
+}
+
+.cursor-outline.hover {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0, 229, 255, 0.1);
+    border-color: #00e5ff;
+}
+
+/* Glassmorphism Styles */
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+}
+
+.glass-nav {
+    background: rgba(5, 5, 5, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Effects */
+.shadow-glow {
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+}
+
+.glow-text {
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
+}
+
+/* Navbar Links */
+.nav-link {
+    color: #d1d5db;
+    font-size: 0.95rem;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #00e5ff;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #00e5ff;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Social Icons */
+.social-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid #374151;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d1d5db;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    border-color: #00e5ff;
+    color: #00e5ff;
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+    transform: translateY(-3px);
+}
+
+/* Skills Grid */
+.skill-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px) scale(1.05);
+    border-color: rgba(0, 229, 255, 0.4);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 229, 255, 0.1) inset;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Project Cards */
+.project-card {
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(0, 229, 255, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+}
+
+/* Preloader Animations */
+.typing-text {
+    animation: typing 2s steps(6, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { max-width: 0 }
+    to { max-width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #00e5ff; }
+}
+
+.progress-bar {
+    animation: load 2.5s ease-in-out forwards;
+}
+
+@keyframes load {
+    0% { width: 0%; }
+    50% { width: 70%; }
+    100% { width: 100%; }
+}
+
+/* Hides scrollbar during preloader */
+body.loading {
+    overflow: hidden;
+}
