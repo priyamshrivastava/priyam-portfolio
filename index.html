@@ -1,418 +1,138 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- SEO Meta Tags -->
-    <title>Priyam Shrivastava | Java Full Stack Developer | Portfolio</title>
-    <meta name="description" content="Final-year B.Tech CSE student with expertise in Java, Spring Boot, React, and REST APIs. Passionate about building scalable web applications and solving real-world problems through clean, efficient code.">
-    <meta name="keywords" content="Priyam Shrivastava, Full Stack Developer, Java, React, Spring Boot, Portfolio, Software Engineer">
-
-    <!-- Open Graph Meta Tags for Social Sharing -->
-    <meta property="og:title" content="Priyam Shrivastava | Java Full Stack Developer">
-    <meta property="og:description" content="Final-year B.Tech CSE student with expertise in Java, Spring Boot, React, and REST APIs.">
-    <meta property="og:image" content="my profile pic 2.jpeg">
-    <meta property="og:url" content="https://priyams-portfolio.netlify.app/"> <!-- Placeholder URL -->
-    <meta property="og:type" content="website">
-
-    <!-- Custom Favicon (SVG with initials PS) -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='15' fill='%23050505'></rect><text y='0.9em' x='0.1em' font-size='80' font-family='Poppins, sans-serif' fill='%2300e5ff'>PS</text></svg>">
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Icons -->
+    <title>Priyam Shrivastava | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-
-    <!-- AOS CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#00e5ff',
-                        secondary: '#7000ff',
-                        darkbg: '#050505',
-                        cardbg: 'rgba(255, 255, 255, 0.03)'
-                    },
-                    fontFamily: {
-                        sans: ['Poppins', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-darkbg text-gray-200 font-sans antialiased selection:bg-primary selection:text-black pt-20 md:pt-24 overflow-x-hidden">
-
-    <!-- Cool Preloader -->
-    <div id="preloader" class="fixed inset-0 z-[99999] bg-[#050505] flex items-center justify-center transition-all duration-1000 ease-in-out">
-        <div class="flex flex-col items-center">
-            <h1 class="text-4xl md:text-6xl font-bold font-mono text-white flex items-center">
-                <span class="text-primary">&lt;</span>
-                <span class="typing-text overflow-hidden whitespace-nowrap border-r-4 border-primary pr-2">Priyam</span>
-                <span class="text-primary">/&gt;</span>
-            </h1>
-            <div class="mt-8 w-48 h-1 bg-gray-800 rounded-full overflow-hidden">
-                <div class="w-full h-full bg-gradient-to-r from-primary to-secondary relative progress-bar shadow-[0_0_15px_#00e5ff]"></div>
-            </div>
-            <p class="text-gray-500 text-sm mt-4 font-mono animate-pulse">Initializing Environment...</p>
+<body>
+    <!-- Preloader Blast Animation -->
+    <div class="preloader" id="preloader">
+        <div class="particles-container" id="particles"></div>
+        <div class="logo-container">
+            <div class="big-p">P</div>
         </div>
     </div>
 
     <!-- Custom Cursor -->
-    <div class="cursor-dot hidden md:block"></div>
-    <div class="cursor-outline hidden md:block"></div>
+    <div class="cursor"></div>
+    <div class="cursor2"></div>
 
-    <!-- Navbar -->
-    <nav class="fixed w-full z-50 top-0 transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center glass-nav rounded-b-2xl md:rounded-full md:mt-4 md:px-8">
-            <a href="#" class="text-2xl font-bold text-white tracking-wider glow-text">Priyam<span class="text-primary">.</span></a>
-            <div class="hidden md:flex space-x-8 items-center">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#achievements" class="nav-link">Achievements</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#contact" class="nav-link">Contact</a>
-                <a href="https://drive.google.com/file/d/1GwpmzWK9V3XaLtGhPBMRQa39MmjSBpCC/view?usp=sharing" target="_blank" class="px-5 py-2 border border-primary text-primary rounded-full hover:bg-primary hover:text-black transition duration-300 shadow-glow">Resume <i class="fas fa-file-alt ml-2"></i></a>
+    <header>
+        <div class="logo">Priyam.</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <div class="resume-btn">
+                <a href="https://drive.google.com/file/d/1nwyeImnPKHduTUQqjgPV3q7KUlGKdKY1/view?usp=sharing" target="_blank" class="btn">View Resume</a>
             </div>
-            <div class="md:hidden text-2xl text-primary cursor-pointer">
-                <i class="fas fa-bars"></i>
+            <div class="profile-pic" style="background-image: url('My profile pic.jpeg');"></div>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="reveal">Hi, I'm Priyam Shrivastava</h1>
+            <h3 class="reveal">I am a <span class="typewriter"></span><span class="cursor-blink">|</span></h3>
+            <p class="reveal">Pre-final year B.Tech student passionate about building scalable software solutions.</p>
+            <div class="social-icons reveal">
+                <a href="https://github.com/priyamshrivastava" target="_blank" class="github-icon"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/priyam-shrivastava-6484a533b/" target="_blank" class="linkedin-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="https://leetcode.com/u/Priyam__Shrivastava/" target="_blank" class="leetcode-icon"><i class="fas fa-code"></i></a>
             </div>
         </div>
-    </nav>
+    </section>
 
-    <!-- Hero Section -->
-    <section class="min-h-[calc(100vh-6rem)] flex items-center justify-center px-6 relative overflow-hidden" id="home">
-        <div class="absolute inset-0 bg-gradient-to-br from-secondary/10 to-primary/5 z-0"></div>
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10 w-full pt-10">
-            <div data-aos="fade-right">
-                <p class="text-primary tracking-widest uppercase text-sm mb-4 font-semibold">Welcome to my world</p>
-                <h1 class="text-5xl md:text-7xl font-bold text-white mb-4 leading-tight">
-                    Hi, I'm <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Priyam Shrivastava</span>
-                </h1>
+    <section id="about" class="section">
+        <h2 class="section-title reveal">About Me</h2>
+        <div class="about-content reveal">
+            <p>I am a pre-final year B.Tech student with a strong foundation in computer science. I am passionate about software development, backend engineering, and creating efficient solutions. I love learning new technologies and applying them to solve real-world problems.</p>
+        </div>
+    </section>
 
-                <!-- UPDATED Title -->
-                <h2 class="text-xl md:text-2xl font-medium text-gray-400 mb-6">
-                    Software Engineer | Java | Spring Boot | React | DSA
-                </h2>
+    <section id="skills" class="section">
+        <h2 class="section-title reveal">Skills</h2>
+        <div class="skills-container">
+            <div class="skill-box reveal" style="--skill-color: #f89820;"><i class="fab fa-java skill-icon" style="color: #f89820;"></i><span>Java</span></div>
+            <div class="skill-box reveal" style="--skill-color: #f7df1e;"><i class="fab fa-js skill-icon" style="color: #f7df1e;"></i><span>JavaScript</span></div>
+            <div class="skill-box reveal" style="--skill-color: #61dafb;"><i class="fab fa-react skill-icon" style="color: #61dafb;"></i><span>React</span></div>
+            <div class="skill-box reveal" style="--skill-color: #68a063;"><i class="fab fa-node skill-icon" style="color: #68a063;"></i><span>Node.js</span></div>
+            <div class="skill-box reveal" style="--skill-color: #ffffff;"><i class="fas fa-server skill-icon" style="color: #ffffff;"></i><span>Express.js</span></div>
+            <div class="skill-box reveal" style="--skill-color: #336791;"><i class="fas fa-database skill-icon" style="color: #336791;"></i><span>PostgreSQL</span></div>
+            <div class="skill-box reveal" style="--skill-color: #e34f26;"><i class="fab fa-html5 skill-icon" style="color: #e34f26;"></i><span>HTML</span></div>
+            <div class="skill-box reveal" style="--skill-color: #1572b6;"><i class="fab fa-css3-alt skill-icon" style="color: #1572b6;"></i><span>CSS</span></div>
+            <div class="skill-box reveal" style="--skill-color: #3776ab;"><i class="fab fa-python skill-icon" style="color: #3776ab;"></i><span>Python</span></div>
+            <div class="skill-box reveal" style="--skill-color: #6db33f;"><i class="fas fa-leaf skill-icon" style="color: #6db33f;"></i><span>Spring Boot</span></div>
+        </div>
+    </section>
 
-                <!-- UPDATED Description -->
-                <p class="text-gray-300 mb-8 max-w-lg leading-relaxed text-lg">
-                    Final-year B.Tech CSE student with expertise in Java, Spring Boot, React, and REST APIs. Passionate about building scalable web applications and solving real-world problems through clean, efficient code.
-                </p>
-
-                <!-- ADDED Statistics Cards -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 text-center">
-                    <div class="stat-card"><strong class="text-2xl text-primary">550+</strong><span class="text-xs text-gray-400">DSA Problems</span></div>
-                    <div class="stat-card"><strong class="text-2xl text-primary">10+</strong><span class="text-xs text-gray-400">Projects Built</span></div>
-                    <div class="stat-card"><strong class="text-2xl text-primary">5+</strong><span class="text-xs text-gray-400">Certifications</span></div>
-                    <div class="stat-card"><strong class="text-2xl text-primary">SDE</strong><span class="text-xs text-gray-400">Open to Internships</span></div>
+    <section id="projects" class="section">
+        <h2 class="section-title reveal">Projects</h2>
+        <div class="projects-grid">
+            <!-- Project 1: VortexOps -->
+            <div class="project-card reveal">
+                <div class="project-header">
+                    <h3><span class="project-icon">🌀</span> VORTEXOPS</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/priyamshrivastava/vortexops-telemetry-suite" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="http://13.51.156.99:8080" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
                 </div>
-
-                <div class="flex flex-wrap gap-4">
-                    <a href="#projects" class="px-8 py-3 bg-primary text-black font-semibold rounded-full hover:shadow-[0_0_20px_rgba(0,229,255,0.6)] transition duration-300">View Work</a>
-                    <a href="https://drive.google.com/uc?export=download&id=1GwpmzWK9V3XaLtGhPBMRQa39MmjSBpCC" class="px-8 py-3 border border-gray-600 rounded-full hover:border-primary hover:text-primary transition duration-300 flex items-center gap-2">
-                        Download CV <i class="fas fa-download"></i>
-                    </a>
+                <p>Enterprise AI Observability Platform. Real-Time Telemetry • AI Diagnostics • Predictive Analytics. Built using Java 21, Spring Boot, React, PostgreSQL, Docker, and OpenRouter AI to provide a unified operations dashboard.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Java 21</span>
+                    <span class="tech-tag">Spring Boot</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">AWS EC2</span>
                 </div>
             </div>
-            <div class="relative flex justify-center mt-10 md:mt-0" data-aos="fade-left">
-                <div class="w-64 h-64 md:w-96 md:h-96 relative group">
-                    <div class="absolute inset-0 border-2 border-primary rounded-full animate-[spin_10s_linear_infinite] group-hover:border-secondary transition-colors duration-500"></div>
-                    <div class="absolute inset-4 border-2 border-secondary rounded-full animate-[spin_15s_linear_infinite_reverse] group-hover:border-primary transition-colors duration-500"></div>
-                    <img src="my profile pic 2.jpeg" alt="Priyam Shrivastava" class="absolute inset-0 w-full h-full object-cover rounded-full border-4 border-darkbg p-2 shadow-[0_0_30px_rgba(0,229,255,0.3)] group-hover:scale-105 transition-transform duration-500 bg-darkbg">
+
+            <!-- Project 2: EventNexus AI -->
+            <div class="project-card reveal">
+                <div class="project-header">
+                    <h3><span class="project-icon">🌌</span> EventNexus AI</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/priyamshrivastava/EventNexus-AI" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <p>Next-Generation AI Powered Event Management Ecosystem. Automates planning, scheduling, and attendee coordination with intelligent event recommendations, Dual-layer Email OTP, and Cloud Native architecture.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Spring Boot</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">OpenRouter AI</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-24 px-6 relative scroll-mt-24">
-        <div class="max-w-6xl mx-auto" data-aos="fade-up">
-            <h2 class="text-4xl font-bold mb-10 text-left border-l-4 border-primary pl-4 text-white">About Me</h2>
-            <div class="glass-card p-8 md:p-12 text-lg text-gray-300 leading-relaxed space-y-6">
-                <p>
-                    I'm a Final Year <strong>B.Tech Computer Science Engineering</strong> student and an aspiring Software Developer with a strong passion for building scalable, user-centric web applications and solving real-world problems through technology.
-                </p>
-                <p>
-                    I specialize in <strong>Java, Spring Boot, React.js, JavaScript, HTML, CSS, Tailwind CSS, MySQL,</strong> and <strong>Git/GitHub</strong>. I enjoy creating seamless experiences from beautifully styled frontend designs to robust backend architecture.
-                </p>
-                <p>
-                    I am a continuous learner, constantly exploring emerging tech like AI, Cloud Computing, and Blockchain while collaborating on innovative projects. Currently, I am seeking Software Development Engineer (SDE) and Full Stack Developer opportunities where I can apply my skills to build impactful products and grow.
-                </p>
-            </div>
+    <section id="contact" class="section">
+        <h2 class="section-title reveal">Contact Me</h2>
+        <div class="contact-container reveal">
+            <form id="contact-form" action="mailto:shrivastavapriyam1402@gmail.com" method="post" enctype="text/plain">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="tel" name="phone" placeholder="Phone Number (10 digits)" pattern="[0-9]{10}" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
         </div>
     </section>
 
-    <!-- Education & Experience Section -->
-    <section id="experience" class="py-24 px-6 bg-black/50 scroll-mt-24">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
-            <!-- Experience -->
-            <div data-aos="fade-right">
-                <h2 class="text-3xl font-bold mb-10 text-left border-l-4 border-secondary pl-4 flex items-center gap-3">Experience</h2>
-                <div class="timeline-item pl-8 border-l-2 border-secondary relative group hover:border-primary transition-colors duration-300">
-                    <div class="absolute w-4 h-4 bg-secondary rounded-full -left-[9px] top-0 shadow-[0_0_10px_#7000ff] group-hover:bg-primary transition-colors duration-300"></div>
-                    <h3 class="text-xl font-semibold text-white">Infosys Springboard</h3>
-                    <p class="text-secondary font-medium mt-1">Trainee</p>
-                    <ul class="mt-4 space-y-3 text-gray-400 text-sm leading-relaxed list-none">
-                        <li class="flex gap-2"><i class="fas fa-check-circle text-primary mt-1"></i> Strengthened understanding of core software development fundamentals, object-oriented programming (OOP), and database management.</li>
-                        <li class="flex gap-2"><i class="fas fa-check-circle text-primary mt-1"></i> Enhanced problem-solving skills and adapted to industry best practices by completing rigorous hands-on learning modules.</li>
-                        <li class="flex gap-2"><i class="fas fa-check-circle text-primary mt-1"></i> Successfully executed practical assignments focused on scalable coding patterns and efficient architecture design.</li>
-                        <li class="flex gap-2"><i class="fas fa-check-circle text-primary mt-1"></i> Built full-stack applications emphasizing clean architecture, code performance, and responsive frontend design alongside academic projects.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Education -->
-            <div data-aos="fade-left">
-                <h2 class="text-3xl font-bold mb-10 text-left border-l-4 border-primary pl-4 flex items-center gap-3">Education</h2>
-                <div class="timeline-item pl-8 border-l-2 border-primary relative group hover:border-secondary transition-colors duration-300">
-                    <div class="absolute w-4 h-4 bg-primary rounded-full -left-[9px] top-0 shadow-glow group-hover:bg-secondary transition-colors duration-300"></div>
-                    <h3 class="text-xl font-semibold text-white">B.Tech in Computer Science Engineering</h3>
-                    <p class="text-primary font-medium mt-1">Final Year Student</p>
-                    <p class="text-gray-400 mt-4 text-sm leading-relaxed">
-                        Currently in my final year, actively focusing on data structures, algorithms, and full-stack web development. Consistently participating in coding challenges and building robust applications to solve real-world problems.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Achievements Section -->
-    <section id="achievements" class="py-24 px-6 relative scroll-mt-24">
-        <div class="max-w-6xl mx-auto" data-aos="fade-up">
-            <h2 class="text-4xl font-bold mb-10 text-left border-l-4 border-secondary pl-4 text-white">Achievements & Certifications</h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="glass-card p-6 border-l-2 border-l-primary hover:-translate-y-2 transition-transform duration-300">
-                    <div class="flex items-start gap-4">
-                        <div class="p-3 bg-primary/10 rounded-lg text-primary text-xl">
-                            <i class="fas fa-trophy"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-white mb-2">Competitive Programming</h3>
-                            <p class="text-gray-400 text-sm">Active problem solver on LeetCode and CodeChef, consistently improving algorithmic skills and data structure proficiency.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-card p-6 border-l-2 border-l-secondary hover:-translate-y-2 transition-transform duration-300">
-                    <div class="flex items-start gap-4">
-                        <div class="p-3 bg-secondary/10 rounded-lg text-secondary text-xl">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-white mb-2">Infosys Springboard Certification</h3>
-                            <p class="text-gray-400 text-sm">Successfully completed the software engineering and full-stack development training path.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-card p-6 border-l-2 border-l-primary hover:-translate-y-2 transition-transform duration-300">
-                    <div class="flex items-start gap-4">
-                        <div class="p-3 bg-primary/10 rounded-lg text-primary text-xl">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-white mb-2">Hackathons / Tech Events</h3>
-                            <p class="text-gray-400 text-sm">Participated in technical showcases, presenting full-stack applications with AI integrations.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-24 px-6 relative bg-black/30 scroll-mt-24">
-        <div class="max-w-6xl mx-auto" data-aos="fade-up">
-            <h2 class="text-4xl font-bold mb-10 text-left border-l-4 border-primary pl-4 text-white">Technical Arsenal</h2>
-            <div class="mb-8">
-                <h3 class="text-xl font-semibold mb-6 text-gray-300 border-b border-gray-800 pb-2 inline-block">Languages & Frameworks</h3>
-                <div class="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-6">
-                    <div class="skill-card"><i class="devicon-java-plain colored text-5xl mb-4"></i><span class="font-medium text-sm">Java</span></div>
-                    <div class="skill-card"><i class="devicon-spring-plain colored text-5xl mb-4"></i><span class="font-medium text-sm">Spring Boot</span></div>
-                    <div class="skill-card"><i class="devicon-cplusplus-plain colored text-5xl mb-4"></i><span class="font-medium text-sm">C++</span></div>
-                    <div class="skill-card"><i class="devicon-react-original colored text-5xl mb-4"></i><span class="font-medium text-sm">React.js</span></div>
-                    <div class="skill-card"><i class="devicon-javascript-plain colored text-5xl mb-4"></i><span class="font-medium text-sm">JavaScript</span></div>
-                    <div class="skill-card"><i class="devicon-html5-plain colored text-5xl mb-4"></i><span class="font-medium text-sm">HTML</span></div>
-                    <div class="skill-card"><i class="devicon-css3-plain colored text-5xl mb-4"></i><span class="font-medium text-sm">CSS</span></div>
-                    <div class="skill-card"><i class="devicon-tailwindcss-original colored text-5xl mb-4"></i><span class="font-medium text-sm">Tailwind CSS</span></div>
-                </div>
-            </div>
-
-            <div>
-                <h3 class="text-xl font-semibold mb-6 text-gray-300 border-b border-gray-800 pb-2 inline-block">Tools, Databases & CS Core</h3>
-                <div class="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-6">
-                    <div class="skill-card"><i class="devicon-mysql-plain colored text-5xl mb-4"></i><span class="font-medium text-sm">MySQL</span></div>
-                    <div class="skill-card"><i class="devicon-postgresql-plain colored text-5xl mb-4"></i><span class="font-medium text-sm">PostgreSQL</span></div>
-                    <div class="skill-card"><img src="https://www.vectorlogo.zone/logos/hibernate/hibernate-icon.svg" class="w-12 h-12 mb-4" alt="Hibernate"><span class="font-medium text-sm">Hibernate</span></div>
-                    <div class="skill-card"><i class="devicon-git-plain colored text-5xl mb-4"></i><span class="font-medium text-sm">Git</span></div>
-                    <div class="skill-card"><i class="devicon-github-original text-white text-5xl mb-4"></i><span class="font-medium text-sm">GitHub</span></div>
-                    <div class="skill-card"><i class="devicon-docker-plain colored text-5xl mb-4"></i><span class="font-medium text-sm">Docker</span></div>
-                    <div class="skill-card"><i class="fas fa-network-wired text-[#00e5ff] text-5xl mb-4"></i><span class="font-medium text-sm text-center">RESTful APIs</span></div>
-                    <div class="skill-card"><i class="fas fa-space-shuttle text-[#ff6c37] text-5xl mb-4"></i><span class="font-medium text-sm">Postman</span></div>
-                    <div class="skill-card"><i class="fas fa-database text-secondary text-5xl mb-4"></i><span class="font-medium text-sm">DBMS</span></div>
-                    <div class="skill-card"><i class="fas fa-code-branch text-primary text-5xl mb-4"></i><span class="font-medium text-sm">OOP</span></div>
-                    <div class="skill-card"><i class="fas fa-project-diagram text-[#00e5ff] text-5xl mb-4"></i><span class="font-medium text-sm text-center">Data Structures</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-24 px-6 relative scroll-mt-24">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold mb-10 text-left border-l-4 border-secondary pl-4 text-white" data-aos="fade-up">Featured Projects</h2>
-            <div class="grid md:grid-cols-2 gap-10">
-                <div class="project-card glass-card p-8 relative group" data-aos="fade-up" data-aos-delay="100">
-                    <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl pointer-events-none"></div>
-                    <div class="flex justify-between items-start mb-6 relative z-10">
-                        <i class="fas fa-folder-open text-4xl text-primary group-hover:-translate-y-2 transition-transform duration-300"></i>
-                        <a href="https://github.com/priyamshrivastava/csat-campaign-builder" target="_blank" class="text-gray-400 hover:text-primary transition-colors text-2xl" title="View Source"><i class="fab fa-github"></i></a>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-3 relative z-10">CSAT Campaign Builder</h3>
-                    <p class="text-gray-400 text-sm mb-6 line-clamp-4 relative z-10">
-                        A React-based CSAT Campaign Builder allowing users to configure customer feedback popups and preview them in real time using a live mobile mockup. Features dynamic add/delete options, content & styling configurations, and media upload support.
-                    </p>
-                    <ul class="flex flex-wrap gap-3 text-xs font-mono text-primary relative z-10">
-                        <li class="bg-primary/10 px-2 py-1 rounded">React.js</li>
-                        <li class="bg-primary/10 px-2 py-1 rounded">Vite</li>
-                        <li class="bg-primary/10 px-2 py-1 rounded">JavaScript</li>
-                        <li class="bg-primary/10 px-2 py-1 rounded">CSS</li>
-                    </ul>
-                </div>
-                <div class="project-card glass-card p-8 relative group" data-aos="fade-up" data-aos-delay="200">
-                    <div class="absolute inset-0 bg-gradient-to-br from-secondary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl pointer-events-none"></div>
-                    <div class="flex justify-between items-start mb-6 relative z-10">
-                        <i class="fas fa-ticket-alt text-4xl text-secondary group-hover:-translate-y-2 transition-transform duration-300"></i>
-                        <a href="https://github.com/priyamshrivastava/support-ticket-system" target="_blank" class="text-gray-400 hover:text-secondary transition-colors text-2xl" title="View Source"><i class="fab fa-github"></i></a>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-3 relative z-10">Support Ticket System</h3>
-                    <p class="text-gray-400 text-sm mb-6 line-clamp-4 relative z-10">
-                        A full-stack support ticket system built for a technical assessment. Features a Django backend, React frontend, and an OpenAI LLM integration for automated ticket classification (category & priority). Completely containerized with Docker.
-                    </p>
-                    <ul class="flex flex-wrap gap-3 text-xs font-mono text-secondary relative z-10">
-                        <li class="bg-secondary/10 px-2 py-1 rounded">Django</li>
-                        <li class="bg-secondary/10 px-2 py-1 rounded">React</li>
-                        <li class="bg-secondary/10 px-2 py-1 rounded">GPT-3.5</li>
-                        <li class="bg-secondary/10 px-2 py-1 rounded">Docker</li>
-                    </ul>
-                </div>
-                <div class="project-card glass-card p-8 relative group" data-aos="fade-up" data-aos-delay="300">
-                    <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl pointer-events-none"></div>
-                    <div class="flex justify-between items-start mb-6 relative z-10">
-                        <i class="fas fa-shopping-cart text-4xl text-primary group-hover:-translate-y-2 transition-transform duration-300"></i>
-                        <a href="https://github.com/priyamshrivastava/ecom-springboot" target="_blank" class="text-gray-400 hover:text-primary transition-colors text-2xl" title="View Source"><i class="fab fa-github"></i></a>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-3 relative z-10">E-Commerce SpringBoot</h3>
-                    <p class="text-gray-400 text-sm mb-6 line-clamp-4 relative z-10">
-                        A robust backend-only E-Commerce application built using Spring Boot, focused on clean layered architecture, RESTful APIs, and scalable backend design with H2 database integration for fast testing via Postman.
-                    </p>
-                    <ul class="flex flex-wrap gap-3 text-xs font-mono text-primary relative z-10">
-                        <li class="bg-primary/10 px-2 py-1 rounded">Java</li>
-                        <li class="bg-primary/10 px-2 py-1 rounded">Spring Boot</li>
-                        <li class="bg-primary/10 px-2 py-1 rounded">JPA</li>
-                        <li class="bg-primary/10 px-2 py-1 rounded">Maven</li>
-                    </ul>
-                </div>
-                <div class="project-card glass-card p-8 relative group" data-aos="fade-up" data-aos-delay="400">
-                    <div class="absolute inset-0 bg-gradient-to-br from-secondary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl pointer-events-none"></div>
-                    <div class="flex justify-between items-start mb-6 relative z-10">
-                        <i class="fas fa-question-circle text-4xl text-secondary group-hover:-translate-y-2 transition-transform duration-300"></i>
-                        <a href="https://github.com/priyamshrivastava/quiz-app" target="_blank" class="text-gray-400 hover:text-secondary transition-colors text-2xl" title="View Source"><i class="fab fa-github"></i></a>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-3 relative z-10">Quiz App Backend</h3>
-                    <p class="text-gray-400 text-sm mb-6 line-clamp-4 relative z-10">
-                        A clean, scalable, and production-ready Quiz Application Backend utilizing Java, Spring Boot, and PostgreSQL. Features efficient handling of quizzes, robust answer validation, scoring logic, and persistent storage.
-                    </p>
-                    <ul class="flex flex-wrap gap-3 text-xs font-mono text-secondary relative z-10">
-                        <li class="bg-secondary/10 px-2 py-1 rounded">Java</li>
-                        <li class="bg-secondary/10 px-2 py-1 rounded">Spring Boot</li>
-                        <li class="bg-secondary/10 px-2 py-1 rounded">PostgreSQL</li>
-                        <li class="bg-secondary/10 px-2 py-1 rounded">REST API</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 px-6 relative bg-black/50 scroll-mt-24">
-        <div class="max-w-6xl mx-auto" data-aos="fade-up">
-            <h2 class="text-4xl font-bold mb-10 text-left border-l-4 border-primary pl-4 text-white">Get In Touch</h2>
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="pr-0 md:pr-10">
-                    <h3 class="text-2xl font-semibold mb-6">Let's build something awesome together!</h3>
-                    <p class="text-gray-400 mb-8 leading-relaxed">Whether you have a question, a project opportunity, or simply want to connect, feel free to reach out. I'm actively looking for Software Developer roles and would love to hear from you!</p>
-                    <div class="space-y-6">
-                        <div class="flex items-center gap-4 group cursor-pointer">
-                            <div class="w-12 h-12 rounded-full bg-cardbg border border-gray-700 flex items-center justify-center group-hover:border-primary group-hover:text-primary transition-colors duration-300">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <p class="text-sm text-gray-500">Email Me</p>
-                                <a href="mailto:shrivastavapriyam1402@gmail.com" class="text-lg font-medium hover:text-primary transition-colors">shrivastavapriyam1402@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-4 group cursor-pointer">
-                            <div class="w-12 h-12 rounded-full bg-cardbg border border-gray-700 flex items-center justify-center group-hover:border-secondary group-hover:text-secondary transition-colors duration-300">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div>
-                                <p class="text-sm text-gray-500">Call Me</p>
-                                <a href="tel:+919111492309" class="text-lg font-medium hover:text-secondary transition-colors">+91 - 9111492309</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="glass-card p-8 shadow-2xl hover:shadow-[0_0_30px_rgba(0,229,255,0.15)] transition-shadow duration-500">
-                    <form action="https://formsubmit.co/shrivastavapriyam1402@gmail.com" method="POST" class="space-y-6">
-                        <input type="hidden" name="_subject" value="New Inquiry from Portfolio!">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_template" value="table">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-400 mb-2">Your Name</label>
-                            <input type="text" name="name" id="name" required class="w-full bg-darkbg border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="John Doe">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-400 mb-2">Your Email</label>
-                            <input type="email" name="email" id="email" required class="w-full bg-darkbg border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="johndoe@example.com">
-                        </div>
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-gray-400 mb-2">Message</label>
-                            <textarea name="message" id="message" rows="4" required class="w-full bg-darkbg border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors resize-none" placeholder="Write anything..."></textarea>
-                        </div>
-                        <button type="submit" class="w-full py-3 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-lg hover:opacity-90 transition-opacity duration-300 shadow-glow flex items-center justify-center gap-2">
-                            Send Message <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- UPDATED Footer -->
-    <footer class="border-t border-gray-800 py-8 text-center bg-black/50">
-        <div class="space-y-4 text-gray-500 text-sm">
-            <p>© 2026 Priyam Shrivastava</p>
-            <p>Built with HTML • CSS • JavaScript</p>
-            <p>Made with <span class="text-red-500">❤️</span> by Priyam</p>
-        </div>
+    <footer>
+        <p>&copy; 2023 Priyam Shrivastava. All rights reserved.</p>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

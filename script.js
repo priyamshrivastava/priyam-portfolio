@@ -1,73 +1,84 @@
-// Preloader Logic
-document.body.classList.add('loading'); // Stop scrolling during load
+// Custom Cursor
+const cursor = document.querySelector('.cursor');
+const cursor2 = document.querySelector('.cursor2');
 
-window.addEventListener('load', () => {
-    const preloader = document.getElementById('preloader');
-    
-    // Wait for the loading animation to finish (approx 2.5 seconds)
-    setTimeout(() => {
-        preloader.style.opacity = '0';
-        preloader.style.transform = 'translateY(-100%)'; // Slide up effect
-        
-        setTimeout(() => {
-            preloader.style.display = 'none';
-            document.body.classList.remove('loading'); // Enable scrolling
-            
-            // Initialize AOS Animation ONLY AFTER preloader is done
-            AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: false,
-                mirror: true
-            });
-        }, 1000); // Wait for fade out to complete before hiding completely
-    }, 2800); // 2.8 seconds total loading time
+document.addEventListener('mousemove', function(e){
+    cursor.style.cssText = cursor2.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
 });
 
-// Custom Cursor Logic
-const cursorDot = document.querySelector('.cursor-dot');
-const cursorOutline = document.querySelector('.cursor-outline');
+// Typewriter Effect
+const text = ["Software Developer", "Java Developer", "Backend Developer"];
+let count = 0;
+let index = 0;
+let currentText = "";
+let letter = "";
 
-if (cursorDot && cursorOutline && window.innerWidth >= 768) {
-    window.addEventListener('mousemove', (e) => {
-        const posX = e.clientX;
-        const posY = e.clientY;
-
-        // Instant follow for the dot
-        cursorDot.style.left = `${posX}px`;
-        cursorDot.style.top = `${posY}px`;
-
-        // Smooth follow for the outline using Web Animations API
-        cursorOutline.animate({
-            left: `${posX}px`,
-            top: `${posY}px`
-        }, { duration: 500, fill: "forwards" });
-    });
-
-    // Add hover effect for links, buttons, and form inputs
-    const hoverElements = document.querySelectorAll('a, button, input, textarea, .social-icon, .skill-card');
-    
-    hoverElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            cursorOutline.classList.add('hover');
-        });
-        el.addEventListener('mouseleave', () => {
-            cursorOutline.classList.remove('hover');
-        });
-    });
-}
-
-// Navbar Scroll Effect
-const navbar = document.getElementById('navbar');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('bg-darkbg/90');
-        navbar.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.5)';
-        navbar.style.paddingTop = '0.5rem';
-    } else {
-        navbar.classList.remove('bg-darkbg/90');
-        navbar.style.boxShadow = 'none';
-        navbar.style.paddingTop = '1rem';
+(function type() {
+    if (count === text.length) {
+        count = 0;
     }
+    currentText = text[count];
+    letter = currentText.slice(0, ++index);
+
+    document.querySelector('.typewriter').textContent = letter;
+    if (letter.length === currentText.length) {
+        count++;
+        index = 0;
+        setTimeout(type, 2000);
+    } else {
+        setTimeout(type, 100);
+    }
+}());
+
+// Smooth Scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Preloader Particles Generation
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('particles');
+    const particleCount = 100;
+
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+
+        const angle = Math.random() * Math.PI * 2;
+        const distance = 800 + Math.random() * 800;
+        const tx = Math.cos(angle) * distance + 'px';
+        const ty = Math.sin(angle) * distance + 'px';
+        const delay = Math.random() * 1.5 + 's';
+
+        particle.style.setProperty('--tx', tx);
+        particle.style.setProperty('--ty', ty);
+        particle.style.animationDelay = delay;
+
+        container.appendChild(particle);
+    }
+
+    // Scroll Reveal Animation
+    const reveal = () => {
+        const reveals = document.querySelectorAll('.reveal');
+        for (let i = 0; i < reveals.length; i++) {
+            const windowHeight = window.innerHeight;
+            const elementTop = reveals[i].getBoundingClientRect().top;
+            const elementVisible = 150;
+
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add('active');
+            }
+        }
+    };
+
+    // Delay reveal to allow preloader to finish
+    setTimeout(() => {
+        window.addEventListener('scroll', reveal);
+        reveal();
+    }, 3800);
 });
